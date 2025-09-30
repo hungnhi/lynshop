@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+  <!-- Fonts khác -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fleur+De+Leah&family=Nosifer&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fleur+De+Leah&family=Mystery+Quest&family=Nosifer&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cart.css">
+
+  <link rel="icon" href="image/lyn_acc.avif">
+  <title>Giỏ hàng - Lyn Shop</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="menu">
+      <div class="logo">
+        <a href="index.html" style="color:black;">LYN</a>
+      </div>
+      <nav class="menu_list">
+        <a href="index.html"><span style="font-size: 30px"><i class='bx bx-home'></i> Trang chủ</span></a>
+        <a href="product.html"><i class='bx bx-shopping-bag'></i> Sản phẩm</a>
+        <a href="cart.html"><i class='bx bx-cart-alt'></i> Giỏ hàng</a>
+        <div id="userMenu">
+          <a id="loginLink" href="login.html" style="font-size: 30px;"><i class='bx bx-user'></i></a>
+          <div id="dropdownMenu" class="dropdown hidden">
+            <a href="#" id="logoutBtn">Đăng xuất</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <img class="banner" src="image/banner/banner_product1.png" alt="Cart Banner">
+
+  <!-- Giỏ hàng -->
+  <section class="cart_container">
+    <h2 class="title_cart">Giỏ hàng của bạn</h2>
+    <table class="cart_table">
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Hình ảnh</th>
+          <th>Số lượng</th>
+          <th>Giá</th>
+          <th>Thành tiền</th>
+          <th>Xóa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Áo thun basic</td>
+          <td><img src="image/áo/ao1.avif" width="80"></td>
+          <td><input type="number" value="1" min="1"></td>
+          <td>200.000đ</td>
+          <td>200.000đ</td>
+          <td><i class='bx bx-trash'></i></td>
+        </tr>
+        <tr>
+          <td>Giày sneaker</td>
+          <td><img src="image/giày/giay1.webp" width="80"></td>
+          <td><input type="number" value="2" min="1"></td>
+          <td>500.000đ</td>
+          <td>1.000.000đ</td>
+          <td><i class='bx bx-trash'></i></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cart_total">
+      <h3>Tổng cộng: <span>1.200.000đ</span></h3>
+      <a href="checkout.html" class="checkout_btn">Thanh toán</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="contact_container">
+    <div class="logo2" style="color:white">
+      <h1>LYN</h1>
+    </div>
+    <div class="contact">
+      <div class="fb-in">
+        <h6>FOLLOW US</h6>
+        <a><i class='bx bxl-facebook-circle'></i> </a>
+        <a><i class='bx bxl-instagram'></i></a>
+        <a><i class='bx bxl-twitter' ></i></a>
+        <a><i class='bx bxl-youtube'></i></a>
+        <a><i class='bx bxl-tiktok' ></i></a>
+      </div>
+      <div class="mail">
+        <h6>SUPPORT</h6>
+        <a><i class='bx bxl-gmail'></i></a>
+        <a><i class='bx bx-phone-call'></i></a>
+      </div>
+      <div class="support">
+        <h6>THÔNG TIN</h6>
+        <h6>Cách thức mua hàng</h6>
+        <h6>Chính sách bảo mật</h6>
+        <h6>Chính sách đổi trả</h6>
+      </div>
+    </div>
+  </section>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", renderCart);
+</script>
+
+</body>
+</html>

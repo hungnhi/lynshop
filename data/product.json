@@ -1,0 +1,20 @@
+{
+  "bag": [
+    {"id":1, "name":"Túi Xách Fineness", "price":1480000, "image":"image/túi/tuixachfineness.webp"},
+    {"id":2, "name":"Túi đeo chéo Moon", "price":1230000, "image":"image/túi/tuideocheomoon.webp"},
+    {"id":3, "name":"Túi xách Ederson", "price":1299000, "image":"image/túi/tuixachederson.webp"},
+    {"id":4, "name":"Túi đeo vai Alena", "price":22200000, "image":"image/túi/tuideovaialena.webp"}
+  ],
+  "shoe": [
+    {"id":5, "name":"Giày cao gót Maiden", "price":2200000, "image":"image/giày/giaycaogotmaiden.webp"},
+    {"id":6, "name":"Giày cao gót Sabella", "price":3200000, "image":"image/giày/giaycaogotsabella.webp"},
+    {"id":7, "name":"Giày Mules cao gót", "price":4200000, "image":"image/giày/giaymulescaogot.webp"},
+    {"id":8, "name":"Giày xăng đan Linda", "price":2280000, "image":"image/giày/giayxangdanlinda.webp"}
+  ],
+  "clother": [
+    {"id":9, "name":"Áo Hoodie đông", "price":540000, "image":"image/áo/aohoodiedong.avif"},
+    {"id":10, "name":"Áo đấu Liverpool", "price":190000, "image":"image/áo/aodauliverpoolfc.avif"},
+    {"id":11, "name":"Áo thể thao", "price":540000, "image":"image/áo/aothethao.avif"},
+    {"id":12, "name":"Áo đấu Real Madrid", "price":190000, "image":"image/áo/aodaurealmadrid.avif"}
+  ]
+}

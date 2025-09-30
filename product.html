@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+  <!-- Fonts khác -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fleur+De+Leah&family=Nosifer&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fleur+De+Leah&family=Mystery+Quest&family=Nosifer&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/product.css">
+
+  <link rel="icon" href="image/lyn_acc.avif">
+  <title>Sản phẩm - Lyn Shop</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="menu">
+      <div class="logo">
+        <a href="index.html" style="color:black;">LYN</a>
+      </div>
+      <nav class="menu_list">
+        <a href="index.html"><span style="font-size: 30px"><i class='bx bx-home'></i> Trang chủ</span></a>
+        <a href="product.html"><i class='bx bx-shopping-bag'></i> Sản phẩm</a>
+        <a href="cart.html"><i class='bx bx-cart-alt'></i> Giỏ hàng</a>
+        <div id="userMenu">
+          <a id="loginLink" href="login.html" style="font-size: 30px;"><i class='bx bx-user'></i></a>
+          <div id="dropdownMenu" class="dropdown hidden">
+            <a href="#" id="logoutBtn">Đăng xuất</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <nav class="menu_product">
+      <a href="#clother"><span class="material-symbols-outlined">apparel</span> Áo</a>
+      <a href="#shoe"><span class="material-symbols-outlined">ice_skating</span> Giày</a>
+      <a href="#bag"><span class="material-symbols-outlined">work</span> Túi</a>
+      <a href="#"><span class="material-symbols-outlined">diamond</span> Phụ kiện</a>
+    </nav>
+  </header>
+  <!-- /Header -->
+
+  <img class="banner" src="image/banner/banner_product1.png">
+  
+  <!--túi-->
+  <section class="bag_container" id="bag">
+    <h3 class="title_bag">Túi</h3>
+    <div class="box" id="bag_box"></div>
+  </section>
+
+  <section class="shoe_container" id="shoe">
+    <h4 class="title_shoe">Shoe</h4>
+    <div class="box" id="shoe_box"></div>
+  </section>
+
+  <section class="clother_container" id="clother">
+    <h4 class="title_clother">Clother</h4>
+      <div class="box" id="clother_box"></div>
+  </section>
+
+  <script>
+    // Fetch sản phẩm từ JSON
+    fetch("data/product.json")
+      .then(res => res.json())
+      .then(data => {
+        renderProducts("bag_box", data.bag);
+        renderProducts("shoe_box", data.shoe);
+        renderProducts("clother_box", data.clother);
+      });
+
+    // Hàm render
+    function renderProducts(containerId, products) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = "";
+
+      products.forEach(p => {
+        container.innerHTML += `
+          <div class="box_item">
+            <img src="${p.image}" alt="${p.name}">
+            <p class="name_product">${p.name}</p>
+            <h6 class="price">${p.price.toLocaleString()}<span class="sup">đ</span></h6>
+            <button onclick="addToCart(${p.id}, '${p.name}', ${p.price}, '${p.image}')" class="add-to-cart-btn">
+              <i class='bx bx-cart-download'></i> Thêm vào giỏ hàng
+            </button>
+          </div>
+        `;
+      });
+    }
+  </script>
+
+  <!-- Footer -->
+  <section class="contact_container">
+    <div class="logo2" style="color:white">
+      <h1>LYN</h1>
+    </div>
+    <div class="contact">
+      <div class="fb-in">
+        <h6>FOLLOW US</h6>
+        <a><i class='bx bxl-facebook-circle'></i> </a>
+        <a><i class='bx bxl-instagram'></i></a>
+        <a><i class='bx bxl-twitter' ></i></a>
+        <a><i class='bx bxl-youtube'></i></a>
+        <a><i class='bx bxl-tiktok' ></i></a>
+      </div>
+      <div class="mail">
+        <h6>SUPPORT</h6>
+        <a><i class='bx bxl-gmail'></i></a>
+        <a><i class='bx bx-phone-call'></i></a>
+      </div>
+      <div class="support">
+        <h6>THÔNG TIN</h6>
+        <h6>Cách thức mua hàng</h6>
+        <h6>Chính sách bảo mật</h6>
+        <h6>Chính sách đổi trả</h6>
+      </div>
+    </div>
+  </section>
+  <!-- /Footer -->
+
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <div id="toast"></div>
+</body>
+</html>
+
